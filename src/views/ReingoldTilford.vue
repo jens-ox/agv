@@ -214,6 +214,10 @@
         </ul>
       </section>
       <section>
+        <h2>Code</h2>
+        <p>The actual implementation of the algorithm to generate the graphs on this page can be <a href="https://github.com/jens-ox/agv">explored on GitHub</a>.</p>
+      </section>
+      <section>
         <h2>Optimizations</h2>
         <p>
           The algorithm implemented here is only for educational purposes. If you want to see what this looks like in production, head over to the <a href="https://github.com/d3/d3-hierarchy/blob/master/src/tree.js#L100">implementation in D3.js</a>.

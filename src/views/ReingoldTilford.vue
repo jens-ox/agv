@@ -389,8 +389,6 @@ export default {
   data () {
     return {
       leftMax: 0,
-      scaling: 40,
-      circleRadius: 10,
       vertices: [],
       edges: [],
       binaryTree: {

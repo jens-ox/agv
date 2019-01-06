@@ -1,0 +1,59 @@
+@tailwind preflight
+@tailwind components
+@tailwind utilities
+
+body
+  @apply text-black leading-normal font-sans
+
+.description
+  @apply italic text-grey-darker text-sm
+
+  &.description-image
+    @apply text-center mb-8
+
+p
+  @apply mb-2
+
+article
+  @apply max-w-md
+
+section
+  @apply mt-8
+
+pre
+  @apply text-xs bg-grey-lighter
+
+ol
+  @apply my-4
+
+.mono
+  @apply font-mono text-sm
+
+.serif
+  @apply font-serif
+
+.formula
+  @apply text-center font-serif my-4
+
+.grid-50
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(1fr, 10em))
+  align-items: center
+  grid-gap: 1em
+
+.tree-circle
+  @apply fill-grey-light stroke-black
+
+  &.tree-circle-marked-red
+    @apply fill-red-lighter
+
+  &.tree-circle-marked-green
+    @apply fill-green-lighter
+
+.tree-line
+  @apply stroke-black
+
+.tree-text
+  @apply fill-black text-xs
+  text-anchor: middle
+  dominant-baseline: middle

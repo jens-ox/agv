@@ -1,29 +1,29 @@
-# agv
+# Algorithms for Graph Visualization
 
-## Project setup
+![Screenshot of the Page](https://raw.githubusercontent.com/jens-ox/agv/public/img/screenshot.jpg)
+
+This repo contains the code for the write-ups of algorithms presented in the lecture [Algorithms for Graph Visualization](https://i11www.iti.kit.edu/teaching/winter2018/graphvis/index) at the Karlsrhue Institute of Technology (KIT) in winter term 2018/2019.
+
+## Development
+
+You can use npm or [yarn](https://yarnpkg.com/lang/en/) for dependency management. To set up:
+
 ```
+git clone https://github.com/jens-ox/agv
+cd agv
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+To run the page in development mode (with hot reloading and stuff):
+
 ```
-yarn run serve
+yarn serve
 ```
 
-### Compiles and minifies for production
+To build a production version:
+
 ```
-yarn run build
+yarn build
 ```
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The production-ready files will be in the `dist` directory.

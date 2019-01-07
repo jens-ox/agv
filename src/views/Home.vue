@@ -38,7 +38,7 @@ export default {
       }
 
       return this.algorithms.filter(algorithm => {
-        return algorithm.searchTerms.some(term => term.includes(this.search))
+        return algorithm.searchTerms.some(term => term.includes(this.search.toLowerCase()))
       })
     }
   },

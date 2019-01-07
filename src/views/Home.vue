@@ -55,6 +55,16 @@ export default {
           searchTerms: [
             'binary', 'tree', 'reingold', 'tilford'
           ]
+        },
+        {
+          link: '/hv-layout',
+          name: 'Right-Heavy HV Layout Algorithm',
+          description: 'An algorithm for producing grid-like visualizations of binary trees.',
+          image: require('@/assets/img/hv.jpg'),
+          imageAlt: 'HV-Layout of a binary tree',
+          searchTerms: [
+            'binary', 'tree', 'hv', 'layout', 'right', 'heavy'
+          ]
         }
       ]
     }
@@ -70,10 +80,10 @@ h1
   @apply w-full
 
 .input-main
-  @apply w-full bg-grey-light p-3 rounded outline-none border-2 border-grey-light
+  @apply w-full bg-grey-lighter p-3 rounded outline-none border-2 border-grey-lighter
 
   &:focus
-    @apply border-indigo
+    @apply border-indigo bg-white
 
 .card
   @apply flex border-grey border shadow-md p-4 my-4 rounded cursor-pointer

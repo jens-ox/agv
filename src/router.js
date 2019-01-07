@@ -17,6 +17,11 @@ export default new Router({
       path: '/reingold-tilford',
       name: 'ReingoldTilford',
       component: () => import(/* webpackChunkName: "ReingoldTilford" */ './views/ReingoldTilford.vue')
+    },
+    {
+      path: '/hv-layout',
+      name: 'HVLayout',
+      component: () => import(/* webpackChunkName: "HVLayout" */ './views/HVLayout.vue')
     }
   ]
 })

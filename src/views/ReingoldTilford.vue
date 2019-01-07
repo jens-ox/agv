@@ -86,6 +86,7 @@
           :edges="edges"
           :vertices="postOrderVertices"
           :leftMax="leftMax"
+          :width="'300px'"
         />
         <p class='description description-image'>Order in which the nodes are visited during post-order traversal.</p>
 
@@ -123,6 +124,7 @@
           :edges="edges"
           :vertices="offsetClashVertices"
           :leftMax="leftMax"
+          :width="'300px'"
         />
         <p class="description description-image">
           The marked nodes have the same x-offset. We have to make sure that there is a certain margin between them.
@@ -137,6 +139,7 @@
           :edges="edges"
           :vertices="contourVertices"
           :leftMax="leftMax"
+          :width="'300px'"
         />
         <p class="description description-image">The <span class="text-red">left</span> and <span class="text-green">right</span> contour of the entire tree.</p>
 

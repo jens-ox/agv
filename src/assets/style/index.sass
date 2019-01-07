@@ -5,14 +5,18 @@
 body
   @apply text-black leading-normal font-sans
 
+a
+  @apply no-underline text-indigo-dark font-semibold
+
 .description
   @apply italic text-grey-darker text-sm
 
   &.description-image
     @apply text-center mb-8
 
-a
-  @apply no-underline text-indigo-dark font-semibold
+  a
+    @apply text-indigo-light
+
 
 p
   @apply mb-2
@@ -21,10 +25,10 @@ article
   @apply max-w-md
 
 section
-  @apply mt-8
+  @apply mt-12
 
 pre
-  @apply text-xs bg-grey-lighter
+  @apply text-xs bg-grey-lighter p-2 rounded
 
 ol
   @apply my-4

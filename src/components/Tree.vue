@@ -1,5 +1,7 @@
 <template>
-  <svg class="block" style="min-height: 270px">
+  <svg class="block" style="min-height: 270px" :style="{
+    'width': width
+  }">
     <g :transform='`translate(${30},${30})`'>
       <line
         v-for='(edge, i) in edges'
@@ -44,6 +46,10 @@ export default {
     circleRadius: {
       type: Number,
       default: 10
+    },
+    width: {
+      type: String,
+      default: '100%'
     },
     edges: Array,
     vertices: Array

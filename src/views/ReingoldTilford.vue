@@ -176,7 +176,7 @@
         <p class="description description-image">The x-offsets of the nodes before and after the correction. The smallest x-offset needs to be updated, too (in <span class="text-green">green</span>).</p>
 
         <p>
-          Note that the post order-way of doing things also applies here! This contour check is done at each level, beginning at the smallest subtrees (the ones that look a little bit like cheries).
+          Note that the post order-way of doing things also applies here! This contour check is done at each level, beginning at the smallest subtrees (the ones that look a little bit like cherries).
         </p>
         <p>
           As soon as the last contour correction &mdash; the one for the root of the tree &mdash; is finished, the first step of the algorithm is completed.

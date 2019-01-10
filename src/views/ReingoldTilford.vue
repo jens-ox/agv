@@ -49,7 +49,7 @@
             <tree
               :edges="edges"
               :vertices="vertices"
-              :leftMax="leftMax"
+              :minX="minX"
             />
           </div>
         </div>
@@ -85,7 +85,7 @@
           class="block mx-auto"
           :edges="edges"
           :vertices="postOrderVertices"
-          :leftMax="leftMax"
+          :minX="minX"
           :width="'300px'"
         />
         <p class='description description-image'>Order in which the nodes are visited during post-order traversal.</p>
@@ -102,14 +102,14 @@
             <tree
               :edges="edges"
               :vertices="xOffsetVertices"
-              :leftMax="leftMax"
+              :minX="minX"
             />
           </div>
           <div>
             <tree
               :edges="edges"
               :vertices="yOffsetVertices"
-              :leftMax="leftMax"
+              :minX="minX"
             />
           </div>
         </div>
@@ -123,7 +123,7 @@
           class="block mx-auto"
           :edges="edges"
           :vertices="offsetClashVertices"
-          :leftMax="leftMax"
+          :minX="minX"
           :width="'300px'"
         />
         <p class="description description-image">
@@ -138,7 +138,7 @@
           class="block mx-auto"
           :edges="edges"
           :vertices="contourVertices"
-          :leftMax="leftMax"
+          :minX="minX"
           :width="'300px'"
         />
         <p class="description description-image">The <span class="text-red">left</span> and <span class="text-green">right</span> contour of the entire tree.</p>
@@ -162,14 +162,14 @@
             <tree
               :edges="edges"
               :vertices="xOffsetVertices"
-              :leftMax="leftMax"
+              :minX="minX"
             />
           </div>
           <div>
             <tree
               :edges="edges"
               :vertices="xOffsetVertices2"
-              :leftMax="leftMax"
+              :minX="minX"
             />
           </div>
         </div>
@@ -285,8 +285,8 @@ export default {
     },
     fixDeviation (tree, deviation) {
       tree.offset += deviation
-      if (tree.offset < this.leftMax) {
-        this.leftMax = tree.offset
+      if (tree.offset < this.minX) {
+        this.minX = tree.offset
       }
       if (tree.left) {
         this.fixDeviation(tree.left, deviation)
@@ -335,8 +335,8 @@ export default {
       // set left offsets
       if (tree.left) {
         tree.left.offset = tree.offset - 1
-        if (tree.left.offset < this.leftMax) {
-          this.leftMax = tree.left.offset
+        if (tree.left.offset < this.minX) {
+          this.minX = tree.left.offset
         }
         tree.left.y = tree.y + 1
         this.computeOffsets(tree.left)
@@ -391,7 +391,7 @@ export default {
   },
   data () {
     return {
-      leftMax: 0,
+      minX: 0,
       vertices: [],
       edges: [],
       binaryTree: {

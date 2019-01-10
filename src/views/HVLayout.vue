@@ -15,7 +15,7 @@
             <tree
               :edges="rtEdges"
               :vertices="rtVertices"
-              :leftMax="-3"
+              :minX="-3"
             />
           </div>
           <div>
@@ -23,7 +23,6 @@
               class="mx-auto"
               :edges="edges"
               :vertices="vertices"
-              :leftMax="0"
               :width="'350'"
             />
           </div>

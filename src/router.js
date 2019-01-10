@@ -21,6 +21,11 @@ export default new Router({
       path: '/hv-layout',
       name: 'HVLayout',
       component: () => import(/* webpackChunkName: "HVLayout" */ './views/HVLayout.vue')
+    },
+    {
+      path: '/radial-layout',
+      name: 'RadialLayout',
+      component: () => import(/* webpackChunkName: "RadialLayout" */ './views/RadialLayout.vue')
     }
   ]
 })

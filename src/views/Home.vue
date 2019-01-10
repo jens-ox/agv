@@ -65,6 +65,16 @@ export default {
           searchTerms: [
             'binary', 'tree', 'hv', 'layout', 'right', 'heavy'
           ]
+        },
+        {
+          link: '/radial-layout',
+          name: 'Radial Tree Layout Algorithm',
+          description: 'An algorithm for producing radial layouts of arbitrary trees (by Pavlo, Homan and Schull).',
+          image: require('@/assets/img/radial.jpg'),
+          imageAlt: 'Radial Layout of a tree',
+          searchTerms: [
+            'arbitrary', 'tree', 'radial', 'layout', 'circular', 'pavlo', 'homan', 'schull'
+          ]
         }
       ]
     }

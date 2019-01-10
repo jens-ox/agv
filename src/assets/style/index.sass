@@ -6,7 +6,7 @@ body
   @apply text-black leading-normal font-sans
 
 a
-  @apply no-underline text-indigo-dark font-semibold
+  @apply cursor-pointer text-indigo-dark font-normal underline
 
 input
   -webkit-appearance: none
@@ -33,7 +33,7 @@ section
 pre
   @apply text-xs bg-grey-lighter p-2 rounded
 
-ol
+ol, ul
   @apply my-4
 
 .mono
@@ -67,3 +67,9 @@ ol
   @apply fill-black text-xs
   text-anchor: middle
   dominant-baseline: middle
+
+.button
+  @apply block mx-auto bg-indigo text-white px-2 py-1 rounded-full text-xs font-semibold outline-none
+
+  &:hover, &:focus
+    @apply outline-none bg-indigo-dark

@@ -1,8 +1,5 @@
 <template>
-  <svg class="block" :style="{
-    'width': width,
-    'min-height': minHeight
-  }">
+  <svg class="block" :width="width" :height="height">
     <g :transform='`translate(${30},${30})`'>
       <slot />
       <line
@@ -57,12 +54,12 @@ export default {
       default: 10
     },
     width: {
-      type: String,
+      type: [Number, String],
       default: '100%'
     },
-    minHeight: {
-      type: String,
-      default: '270px'
+    height: {
+      type: [Number, String],
+      default: 280
     },
     edges: Array,
     vertices: Array

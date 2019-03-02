@@ -10,14 +10,14 @@
           The <a @click="$router.push('/reingold-tilford')">Reingold-Tilford Algorithm</a> produces visualizations of binary trees in a layered manner. As an alternative to a top-down layout, trees can also be layouted in a radial way. This has the advantage of producing very compact visualizations:
         </p>
         <tree
-          class="block mx-auto"
+          class="mx-auto"
           :edges="edges"
           :vertices="vertices"
           :minX="minX"
           :minY="minY"
           :scaling="5"
-          :minHeight="'280'"
-          :width="'280'"
+          height="280"
+          width="280"
           :circleRadius="5"
         >
         <g v-if="showCircles">
@@ -105,8 +105,8 @@
           :minX="minX"
           :minY="minY"
           :scaling="5"
-          :minHeight="'280'"
-          :width="'280'"
+          height="280"
+          width="280"
           :circleRadius="5"
         />
       </section>

@@ -19,6 +19,7 @@
           height="280"
           width="280"
           :circleRadius="5"
+          @addChild="addChild"
         >
         <g v-if="showCircles">
           <circle
@@ -38,7 +39,7 @@
         </g>
         </tree>
         <button class="button my-2" @click="showCircles = !showCircles">Toggle circles</button>
-        <p class="description text-center">A radially layouted tree.</p>
+        <p class="description text-center">A radially layouted tree. Click on a node to add a new child.</p>
 
         <p>
           Using the algorithm by <a href="https://arxiv.org/abs/cs/0606007">Pavlo, Homan and Schull</a>, we can generate such visualizations &mdash; not only for binary trees, but for arbitrary ones.
@@ -119,7 +120,38 @@ import Tree from '@/components/Tree.vue'
 
 export default {
   components: { Tree },
+  beforeMount () {
+    this.recompute()
+  },
   methods: {
+    recompute (clean = false) {
+      if (clean) {
+        this.clean(this.tree)
+        this.vertices = []
+        this.edges = []
+        this.circles = []
+      }
+      this.computeRelativeCoordinates(this.tree)
+      this.serializeTree(this.tree)
+    },
+    clean (tree) {
+      delete tree.polar
+      delete tree.radius
+      delete tree.coordinates
+      if (tree.children) {
+        this.clean(tree.children)
+      }
+    },
+    addChild (vertex) {
+      if (!vertex.children) {
+        vertex.children = [{}]
+      } else {
+        vertex.children.push({})
+      }
+
+      // recompute
+      this.recompute(true)
+    },
     polarToCartesian (polar) {
       return [polar[0] * Math.cos(polar[1]), polar[0] * Math.sin(polar[1])]
     },
@@ -173,14 +205,15 @@ export default {
       const vertex = {
         marked: tree.marked,
         x: tree.coordinates[0],
-        y: tree.coordinates[1]
+        y: tree.coordinates[1],
+        node: tree
       }
       this.vertices.push(vertex)
       if (tree.children) {
         this.circles.push({
           cx: vertex.x,
           cy: vertex.y,
-          r: tree.radius
+          r: tree.radius || 0
         })
         for (let i = 0; i < tree.children.length; i++) {
           // absolutify coordinates
@@ -204,10 +237,6 @@ export default {
         }
       }
     }
-  },
-  beforeMount () {
-    this.computeRelativeCoordinates(this.tree)
-    this.serializeTree(this.tree)
   },
   data () {
     return {

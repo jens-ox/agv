@@ -52,7 +52,10 @@ ol, ul
   grid-gap: 1em
 
 .tree-circle
-  @apply fill-grey-light stroke-black
+  @apply fill-grey-light stroke-black cursor-pointer
+
+  &:hover
+    @apply fill-grey
 
   &.tree-circle-marked-red
     @apply fill-red-lighter

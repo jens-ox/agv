@@ -24,6 +24,7 @@
             'tree-circle-marked-red': vertex.marked && vertex.marked === 'red',
             'tree-circle-marked-green': vertex.marked && vertex.marked === 'green'
           }"
+          @click="$emit('addChild', vertex.node)"
         />
         <text
           :x="(vertex.x - minX) * scaling"
